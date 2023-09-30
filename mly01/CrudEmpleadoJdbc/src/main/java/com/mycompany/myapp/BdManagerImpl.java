@@ -22,7 +22,24 @@ public class BdManagerImpl implements BdManager {
     }
 
     public int cargaInicial(ArrayList<Empleado> empleados) throws SQLException {
-
+        try (Connection connection = DriverManager.getConnection(URL)){
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM empleado");
+            ResultSet rs = ps.executeQuery();
+            List<Empleado> result = new ArrayList<>();
+            
+            while (rs.next()) {
+            
+            result.add( new Empleado(
+            rs.getInt("id"),
+            rs.getString("nombre"),
+            rs.getFloat("salario")));
+            
+            }
+            
+            rs.close();
+            ps.close();
+            }
+            return result;
     }
 
     public ArrayList<Empleado> consultar() throws SQLException {
@@ -72,10 +89,25 @@ public class BdManagerImpl implements BdManager {
     }
 
     public int borrar(Long id) throws SQLException {
+        try (Connection conexion = DriverManager.getConnection(URL)){
+            PreparedStatement ps = conexion.prepareStatement("DELETE FROM empleados WHERE id=?") {
+            
+        ps.setLong(1,empleado.id);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        while (rs.next()) {
+            if (rs.getId==id) {
+            System.out.println("Borrando producto: "+ rs.getString(1));
+            rs.deleteRow();
+            }
+            }
+            ps.close();
+    } catch (SQLException e) {
+        System.out.println("Código de Error: " + e.getErrorCode() + "%n" +
+                "SLQState: " + e.getSQLState() + "%n" +
+                "Mensaje: " + e.getMessage() + "%n");
+    }
 
     }
 
-    public int actualizar(Empleado empleado) throws SQLException {
-
-    }
 }
