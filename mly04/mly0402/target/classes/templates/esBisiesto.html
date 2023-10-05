@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>bisiesto</h1>
+<div th:if="${bisiesto}">
+ <p>El año  <span th:text="${x}">x</span> es bisiesto </p>
+</div>
+<div th:unless="${bisiesto}">
+    <p>El año  <span th:text="${x}">x</span> no es bisiesto </p>
+</div>
+</body>
+</html>

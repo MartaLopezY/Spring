@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Divisores</h1>
+<div>
+    <p>El número <span th:text="${num}">x</span> los siguientes divisores:</p>
+</div>
+
+<div th:each="divisores:${lista}">
+    <a th:href="@{/calculos/divisores/?num={x}(x=${divisores})}"><span th:text="${divisores}">*</span></a>
+</div>
+</body>
+</html>
