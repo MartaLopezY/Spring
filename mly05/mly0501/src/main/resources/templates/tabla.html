@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"  lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>TablaDeUsuarios</title>
+
+</head>
+<body>
+<h3>Datos de usuario</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${formInfo.nombre}">Nombre</td>
+        <td th:text="${formInfo.apellidos}">Apellidos</td>
+        <td th:text="${formInfo.edad}">Edad</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Inicio</a><br/>
+
+</body>
+</html>

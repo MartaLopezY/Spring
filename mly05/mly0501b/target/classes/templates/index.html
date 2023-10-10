@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        lang="es"
+>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale" />
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Formulario</title>
+</head>
+<body>
+<h1>Insertar Usuario</h1>
+<form action="#" method="post"
+        th:action="@{/myForm/submit}"
+        th:object="${formInfo}">
+    <fieldset>
+        <strong>Nombre:</strong>
+            <input type="text" id="nombre" th:field="*{nombre}" /> </label><br />
+        <label><strong>Apellidos:</strong>
+            <input type="text" id="apellidos" th:field="*{apellidos}" /> </label><br />
+        <label><strong>Edad:</strong>
+            <input type="text" id="edad" th:field="*{edad}" /> </label><br />
+
+        <input type="submit" value="Enviar"/>
+    </fieldset>
+</form>
+
+</body>
+</html>
