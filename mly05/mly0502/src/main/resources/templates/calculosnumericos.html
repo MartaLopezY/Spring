@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Número primo</h1>
+
+<form action="#" method="post" th:action="@{/calculos/primo}" th:object="${Primo}">
+    <fieldset>
+    <label><strong>Introduce un número:</strong>
+        <input type="text" id="numero" th:field="*{numero}" /> </label><br/>
+    <input type="submit" value="Enviar" />
+
+    </fieldset>
+</form>
+
+<h1>Calculo de la hipotenusa</h1>
+
+<form action="#" method="post" th:action="@{/calculos/hipotenusa}" th:object="${Triangulo}">
+    <fieldset>
+        <label><strong>Introduce un cateto:</strong>
+            <input type="text" id="cateto1" th:field="*{cateto1}" /> </label><br/>
+        <label><strong>Introduce otro cateto:</strong>
+            <input type="text" id="cateto2" th:field="*{cateto2}" /> </label><br/>
+        <input type="submit" value="Enviar" />
+    </fieldset>
+</form>
+
+<h1>Calculo de los divisores de un número</h1>
+
+<form action="#" method="post" th:action="@{/calculos/divisores}" th:object="${Divisor}">
+    <fieldset>
+        <label><strong>Introduce un número:</strong>
+            <input type="text" id="divisor" th:field="*{numero}" /> </label><br/>
+    </fieldset>
+</form>
+</body>
+</html>
