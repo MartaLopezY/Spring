@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        lang="es"
+>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale" />
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Formulario</title>
+</head>
+<body>
+<fieldset>
+<form action="#" method="post" th:action="@{/myForm/submit}" th:object="${pais}">
+        <h4>Info de paises</h4>
+        <select onchange="this.form.submit()" th:field="*{nombre}">
+            <option value="">selecciona un pais</option>
+            <option th:each="pais:${lista}"
+            th:value="${pais.nombre}" th:text="${pais.nombre}"
+            ></option>
+        </select>
+</form>
+Capital:<span th:text="${capital}">*</span><br/>
+Población:<span th:text="${poblacion}">*</span><br/>
+</fieldset>
+</body>
+</html>
