@@ -1,0 +1,18 @@
+h3{
+    margin:1% 25% 5px 40%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 15px;
+    margin:5% 25% 5% 25%;
+}
+th {
+    background-color: dodgerblue;
+    color: white;
+}
+td {
+    background-color: #EBF5FB;
+    color: black;
+}
