@@ -14,11 +14,11 @@ public class MyappApplication {
 		return args -> {
 
 			productoService.agregar(
-					new Producto(1L, "mesa", true, NORMAL, 100d));
+					new Producto(1L, "mesa", true, NORMAL, 100d,1L));
 			productoService.agregar(
-					new Producto(2L, "silla", false, NORMAL, 50d));
+					new Producto(2L, "silla", false, NORMAL, 50d,1L));
 			productoService.agregar(
-					new Producto(3L, "estanteria", true, REDUCIDO, 70d));
+					new Producto(3L, "estanteria", true, REDUCIDO, 70d,1L));
 			categoriaService.agregar(
 					new Categoria(1L, "muebles"));
 			categoriaService.agregar(
@@ -26,5 +26,4 @@ public class MyappApplication {
 			categoriaService.agregar(
 					new Categoria(3L, "accesorios"));
 		};
-	}
 }
