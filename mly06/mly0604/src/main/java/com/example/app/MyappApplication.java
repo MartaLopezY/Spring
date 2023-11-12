@@ -10,7 +10,7 @@ public class MyappApplication {
 		SpringApplication.run(MyappApplication.class, args);
 	}
 @Bean
-	CommandLineRunner initData(ProductoService productoService) {
+	CommandLineRunner initData(ProductoService productoService, CategoriaService categoriaService) {
 		return args -> {
 
 			productoService.agregar(
@@ -19,6 +19,12 @@ public class MyappApplication {
 					new Producto(2L, "silla", false, NORMAL, 50d));
 			productoService.agregar(
 					new Producto(3L, "estanteria", true, REDUCIDO, 70d));
+			categoriaService.agregar(
+					new Categoria(1L, "muebles"));
+			categoriaService.agregar(
+					new Categoria(2L, "alfombras"));
+			categoriaService.agregar(
+					new Categoria(3L, "accesorios"));
 		};
 	}
 }
