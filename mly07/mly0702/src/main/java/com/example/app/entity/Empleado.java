@@ -26,6 +26,7 @@ public class Empleado {
         private boolean enActivo;
         private Genero genero;
         @ManyToOne
+        @OnDelete(action= OnDeleteAction.CASCADE)
         @JoinColumn(name = "DEPTO_ID", foreignKey = @ForeignKey(name="DEPTO_ID_FK"))
         private Departamento departamento;
 
