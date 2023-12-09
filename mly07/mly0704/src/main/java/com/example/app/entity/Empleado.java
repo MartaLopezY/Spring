@@ -35,8 +35,6 @@ public class Empleado {
         @ManyToOne
         @JoinColumn (name="CATEGORIA_ID") //opcional
         private Categoria categoria;
-        @ToString.Exclude
-        @OneToMany(mappedBy = "empleado", cascade = CascadeType.REMOVE)
-        private List<EmpleadoProyecto> empleadoProyecto = new ArrayList<>();
+
 
 }

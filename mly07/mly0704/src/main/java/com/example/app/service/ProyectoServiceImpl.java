@@ -33,7 +33,6 @@ public class ProyectoServiceImpl implements ProyectoService {
     public void borrar(Proyecto proyecto) {
         proyectoRepositorio.delete(proyecto);
     }
-
     public Proyecto obtenerPorNombre(String nombre) {
         return proyectoRepositorio.findByNombre(nombre);
     }

@@ -19,7 +19,5 @@ public class Proyecto {
         private Long id;
         @NotEmpty
         private String nombre;
-        @ToString.Exclude
-        @OneToMany(mappedBy = "proyecto", cascade = CascadeType.REMOVE)
-        private List<EmpleadoProyecto> empleadoProyecto = new ArrayList<>();
+
 }
