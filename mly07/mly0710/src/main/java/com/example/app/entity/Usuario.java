@@ -1,8 +1,6 @@
 package com.example.app.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -20,11 +18,14 @@ import java.time.LocalDate;
 @Entity
 public class Usuario {
     @Id
-    @GeneratedValue
     private Long id;
     @NotNull
     private String nombre;
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate fechaCreacion=LocalDate.now();
 
+    private LocalDate fechaCreacion;
+    public Usuario(Long id,String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fechaCreacion=LocalDate.now();
+    }
 }

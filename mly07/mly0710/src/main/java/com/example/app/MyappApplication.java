@@ -9,9 +9,9 @@ public class MyappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MyappApplication.class, args);
 	}
-	/*
+/*
 	@Bean
-	CommandLineRunner initData(ProductoService productoService, CategoriaService categoriaService) {
+	CommandLineRunner initData(ProductoService productoService, CategoriaService categoriaService, UsuarioService usuarioService, ValoracionService valoracionService) {
 		return args -> {
 			categoriaService.agregar(
 					new Categoria(1L, "muebles"));
@@ -27,9 +27,12 @@ public class MyappApplication {
 					new Producto(4L, "cojin", true, NORMAL, 20d,categoriaService.obtenerPorId(2L)));
 			productoService.agregar(
 					new Producto(4L, "jarón", true, NORMAL, 5d,categoriaService.obtenerPorId(2L)));
-
+			usuarioService.agregar(new Usuario(0L,"pepe", LocalDate.now()));
+			usuarioService.agregar(new Usuario(1L,"maria", LocalDate.now()));
+			valoracionService.agregar(new Valoracion(0L,6,"Se estropea rapido"));
+			valoracionService.agregar(new Valoracion(1L,8,"funciona bien"));
 		};
 	}
 
-	 */
+*/
 }
