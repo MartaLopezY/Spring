@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        .cssError {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Cambiar email empleado</h1>
+<form method="post" action="#" th:action="@{/editEmail/{id}/submit(id=${empleadoDtoForm.id})}"
+      th:object="${empleadoDtoForm}">
+    <input type="text" readonly id="id" th:field="*{id}" /> </label>
+    <label>Email:<input type="text" id="email" th:field="*{email}" /></label>
+        <input type="submit" value="Enviar" />
+</form>
+<p th:text="${txtError}">error</p>
+<a href="/">Inicio</a><br />
+</body>
+
+</html>
