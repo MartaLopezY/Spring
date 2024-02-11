@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro CRUD</title>
+</head>
+<body>
+<nav  class="navbar navbar-expand-sm navbar-light bg-light"  style="background-color:#F4FBEB;margin-right-color:#F4FBEB">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- menú común para el público -->
+                <li >
+                    <a class="nav-item nav-link active" aria-current="page" th:href="@{/public/index}"><strong>Inicio</strong></a>
+                </li>
+
+                <li>
+                    <a class="nav-item nav-link active" th:href="@{/public/contacta}"><strong>Contacta</strong></a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link active"  th:href="@{/public/quienessomos}"><strong>Quienes somos</strong></a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link active"  th:href="@{/producto/}"><strong>Producto</strong></a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link active"  th:href="@{/categoria/}"><strong>Categoria</strong></a>
+                </li>
+
+                <!-- menú de gestión de usuarios (solo administradores) -->
+                <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/usuario/list}">Usuarios</a></li>
+
+                <!-- menú: Registrarse (solo si no autenticado) -->
+                <li sec:authorize="!isAuthenticated()">
+                    <a class="nav-item nav-link active" th:href="@{/public/registro/nuevo}">Registrarse</a></li>
+
+                <!-- menú: Iniciar sesión (solo si no autenticado) -->
+                <li sec:authorize="!isAuthenticated()">
+                    <a class="nav-item nav-link active" th:href="@{/login}">Iniciar sesión</a></li>
+
+                <!-- menú: nombre-usuario (solo si autenticado) -->
+                <li class="nav-item ms-md-auto dropdown " sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span sec:authentication="name"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/usuario/edit/}">Editar perfil</a></li>
+                        <li><a class="dropdown-item" th:href="@{/usuario/editPass/}">Cambiar Contraseña</a></li>
+                        <li><a class="dropdown-item" th:href="@{/logout}">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Registrate:</h1>
+<form method="post" action="#" th:action="@{/public/registro/nuevo/submit}" th:object="${registroForm}">
+    <label>Id:-solo lectura-<input type="text" readonly id="id"th:field="*{id}" /> </label><br/>
+    <label>Nombre:<input type="text" id="nombre"th:field="*{nombre}" /></label><br/>
+    <label>Contraseña: <input type="password" id="password" th:field="*{password}"/></label><br/><br/>
+    <input type="submit" value="Enviar" />
+</form>
+<a th:href="@{/public/}">Inicio</a><br/>
+</body>
+</html>
