@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hola Mundo</h1>
+<button th:onclick="'location.href=\''+@{/calculos/primo/?numero={x}(x=${15})}+'\''">No Primo</button><br>
+<button th:onclick="'location.href=\''+@{/calculos/primo/?numero={x}(x=${7})}+'\''">Primo</button><br>
+<button th:onclick="'location.href=\''+@{/calculos/primo/}+'\''">Primo Error</button><br><br>
+<button th:onclick="'location.href=\''+@{/calculos/hipotenusa/{x}/{y} (x=${2},y=${3})}+'\''">Hipotenusa</button><br>
+<button th:onclick="'location.href=\''+@{/calculos/hipotenusa/{x}/{y} (x=${-2},y=${-3})}+'\''">Hipotenusa error</button><br><br>
+<button th:onclick="'location.href=\''+@{/calculos/sinRepetidos/{x} (x=${20})}+'\''">Sin repetidos</button><br>
+<button th:onclick="'location.href=\''+@{/calculos/sinRepetidos/{x} (x=${200})}+'\''">Sin repetidos error</button><br><br>
+<button th:onclick="'location.href=\''+@{/calculos/divisores/{x} (x=${30})}+'\''">Divisores por Path</button><br>
+<button th:onclick="'location.href=\''+@{/calculos/divisores/?num={x}(x=${15})}+'\''">Divisores por Request</button>
+</body>
+</html>
