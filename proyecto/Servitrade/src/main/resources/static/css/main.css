@@ -1,0 +1,243 @@
+#contenedorLogo{
+    z-index: 2;
+    justify-content: center;
+    background-color:#F4FBEB;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+#logo{width: 20%;}
+#nombre{
+    font-family: 'Germania One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 65px;
+    text-align: center;
+    color: #5D932F;
+}
+a{
+  text-decoration: none;
+}
+#menu{
+    background-color:#F4FBEB;
+    position: relative;
+    max-width: 100%; /* Asegura que el menú siempre ocupe todo el ancho disponible */
+    margin-bottom: 2%;
+}
+#submenu{
+   background-color:#F4FBEB;
+   max-width: 100%;
+   padding-top: 3%;
+   padding-bottom: 3%;
+   z-index: 2;
+}
+#funciona,#subirServ,#comprarMon,#novedades,#todasCat{
+    color:green;
+    background-color:#F4FBEB;
+}
+
+#formu{
+    position:absolute,left 50%,right 0%;
+    background-color: #F4FBEB;
+}
+#search{
+    background-color:#F4FBEB;
+    border-color:white;
+}
+#icobuscar{
+    color:green;
+    font-size: 1.1rem;
+}
+#barra{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+
+#Personal{
+    color:black;
+}
+#icopersona{
+    font-size: 1.2rem;
+}
+
+#menuregistro{
+    background-color:#F4FBEB;
+    right: 50px;
+}
+#registro{
+    color:black;
+}
+#menIdiomas{
+    margin-left: 92%;
+    right: 0;
+}
+#idiomas{
+    color:black;
+}
+
+
+#funciona:hover,#subirServ:hover,#comprarMon:hover,#novedades:hover,#todasCat:hover,#icobuscar:hover{
+    background-color:green;
+    color:white !important;
+}
+
+#idiomas:hover, #registro:hover, #Personal:hover{
+    color:green;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+} 
+
+#search:hover, #icobuscar:hover{
+    background-color:green;
+    color:white;
+}
+
+#iniSesionContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Para asegurar que todos ocupen la misma altura */
+    background-color:#F4FBEB;
+    padding-left: 82%;
+    z-index: 1;
+}
+
+#iniSesion, #menuregistro, #menIdiomas {
+    background-color: #F4FBEB;
+    color: black;
+    padding: 0 10px; /* Añadir espacio entre los elementos */
+}
+
+#iniSesion:hover, #menuregistro:hover, #menIdiomas:hover {
+    color: green;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+
+#pie{
+    background-color:#91A971;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+#facebook, #twitter, #youtube, #apple, #android,#instagram{
+    font-size: 1.5rem;
+}
+#conocenos, #descubre, #legal{
+
+    font-family:alegreya-light;
+}
+#textpie{
+    font-family:alegreya-light;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+footer i:hover{
+    background-color:#8a9976;
+    color:white;
+}
+dt {
+    font-weight: normal !important;
+}
+
+
+
+
+#ajustecarousel{
+justify-content: center;
+margin-top:1%;
+margin-left: auto;
+margin-right: auto;
+width: 70%;
+}
+#carouselactivo{
+margin-top:1%;
+margin-bottom:1%;
+}
+#carousel1, #carousel2{
+width:auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+#carousel1{
+    background-color:#F4FBEB; 
+}
+/* Estilo para pantallas grandes */
+@media screen and (min-width: 1200px) {
+    .carousel-item {
+       height: 2%;
+    }
+   }
+   
+   /* Estilo para pantallas medianas */
+   @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .carousel-item {
+       height: 4%;
+    }
+   }
+   
+   /* Estilo para pantallas pequeñas */
+   @media screen and (max-width: 767px) {
+    .carousel-item {
+       height: 2%;
+    }
+   }
+
+
+
+#tarjeta, #tarjeta2, #tarjeta3, #tarjeta4, #tarjeta5, #tarjeta6, #tarjeta7, #tarjeta8{
+border:solid 3px green;
+background-color:#F4FBEB;
+margin-top: 1%;
+padding-bottom: 1%;
+padding-top: 1%;
+}
+#tarjeta:hover, #tarjeta2:hover, #tarjeta3:hover, #tarjeta4:hover,#tarjeta5:hover, #tarjeta6:hover, #tarjeta7:hover, #tarjeta8:hover{
+color:darkgreen;
+box-shadow: 0 0 10px 0 darkgreen inset, 0 0 10px 4px darkgreen;
+}
+
+#tarjeta7:hover path{
+    fill:darkgreen;
+}
+#lineaTarjetas, #lineaTarjetas2{
+margin-top:1%;
+margin-bottom:5%;
+margin-left:10%;
+margin-right: 10%;
+}
+
+#educacion, #moneda, #globo,#taza,#sanidad,#vehiculo,#otros{
+font-size: 8rem;
+display: flex;
+justify-content:center;
+padding-top:2%;
+padding-bottom:2%;
+border-bottom:dotted green;
+}
+#mascota{
+    display: flex;
+    margin: auto;
+    padding-top:2%;
+    padding-bottom:2%;
+    height: 8rem;
+    justify-content:center;
+    }
+#titulo7{
+    border-top:dotted green;
+    margin-top: 4%;
+    }
+#titulo1, #text1,#titulo2, #text2,#titulo3, #text3,#titulo4, #text4,#titulo5, #text5,#titulo6, #text6,#titulo7, #text7,#titulo8, #text8{
+text-align:center;
+}
+#botTarj, #botTarj2, #botTarj3, #botTarj4,#botTarj5, #botTarj6, #botTarj7, #botTarj8{
+display:block;
+justify-content:center;
+margin:1% 2.5% 1% 1% ;
+}
